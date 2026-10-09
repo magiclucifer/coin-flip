@@ -1,4 +1,4 @@
-#CoinFlip
+# CoinFlip
 
 **A minimal coin flip simulator built with JavaScript.**
 
