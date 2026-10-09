@@ -1,40 +1,27 @@
-<div align="center">CoinFlip
+CoinFlip
 
-A Minimal Binary Random Simulator for Node.js
+A minimal binary random simulator for Node.js.
 
-A lightweight, dependency-free command-line application that simulates coin flips using binary outcomes, "0" and "1".
+CoinFlip is a lightweight command-line application that simulates coin flips using binary outcomes: "0" and "1". It supports batch simulations, statistical summaries, and colored terminal output.
 
-<br>"JavaScript" (https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
-"Node.js" (https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=FFFFFF)
-"Dependencies" (https://img.shields.io/badge/Dependencies-None-2EA44F?style=flat-square)
-"License" (https://img.shields.io/badge/License-MIT-007EC6?style=flat-square)
-
-0 or 1. Nothing in between.
-
-</div>---
-
-Overview
-
-CoinFlip is a simple command-line utility written in JavaScript that generates random binary outcomes and provides statistical summaries for multiple trials.
-
-Designed to be lightweight and straightforward, it runs directly on Node.js without external packages or additional setup.
+"JavaScript" (https://img.shields.io/badge/JavaScript-ES6%2B-yellow)
+"Node.js" (https://img.shields.io/badge/Node.js-18%2B-green)
+"Dependencies" (https://img.shields.io/badge/Dependencies-None-blue)
 
 Features
 
-- Binary Outcomes: Generates "0" or "1" for each flip.
-- Batch Simulation: Simulates multiple flips in a single execution.
-- Statistical Analysis: Calculates the frequency and percentage of each outcome.
-- Deviation Measurement: Measures the absolute difference between the observed heads percentage and the expected 50%.
-- Colored Output: Uses ANSI escape codes for readable terminal output.
-- Command-Line Arguments: Supports configurable flip counts, help, and version information.
-- Zero Dependencies: Uses built-in JavaScript and Node.js functionality.
-- Single-File Design: The entire application is contained in one JavaScript file.
+- Single coin flip with a binary result.
+- Batch simulation with a configurable number of flips.
+- Statistics for both outcomes.
+- Percentage calculations and deviation measurement.
+- Colored terminal output using ANSI escape codes.
+- Command-line arguments for count, help, and version.
+- No external dependencies.
+- Single-file implementation.
 
 Requirements
 
-- "Node.js" (https://nodejs.org/) 18 or later.
-
-No additional dependencies are required.
+- Node.js 18 or later.
 
 Installation
 
@@ -50,29 +37,20 @@ Usage
 
 Single Flip
 
-Run a single coin flip:
-
 node coinflip.js
 
-Example output:
+The application generates one random result:
 
 COINFLIP v2.0.0
 Binary Random Simulator
 
 RESULT  1 HEADS
 
-STATISTICS
-──────────────────────────────────
-Total flips  1
-Heads (1)    1 (100.00%)
-Tails (0)    0 (0.00%)
-Deviation    50.00%
-
-The result is randomly generated and will vary between executions.
+The result can be either "0" (Tails) or "1" (Heads).
 
 Multiple Flips
 
-Simulate 100 flips:
+Run 100 flips:
 
 node coinflip.js --count 100
 
@@ -80,23 +58,17 @@ Or use the shorthand option:
 
 node coinflip.js -n 100
 
-Large-Scale Simulation
-
 Run 10,000 flips:
 
 node coinflip.js --count 10000
 
-The application reports the total number of trials, the frequency of each outcome, their percentages, and the deviation from the expected heads percentage.
+The application displays the total number of flips, the count and percentage of each outcome, and the deviation from the expected heads percentage.
 
 Help
-
-Display available commands:
 
 node coinflip.js --help
 
 Version
-
-Display the application version:
 
 node coinflip.js --version
 
@@ -104,32 +76,32 @@ Command-Line Options
 
 Option| Description
 "-n", "--count <number>"| Set the number of flips
-"-h", "--help"| Display usage instructions
-"-v", "--version"| Display the current version
+"-h", "--help"| Display help information
+"-v", "--version"| Display the application version
 
-The flip count must be an integer between "1" and "10,000,000".
+The number of flips must be between "1" and "10,000,000".
 
 How It Works
 
-CoinFlip uses JavaScript's built-in "Math.random()" function to generate each binary outcome.
+CoinFlip uses JavaScript's built-in "Math.random()" function to generate binary outcomes.
 
 const flip = () => Math.random() < 0.5 ? 0 : 1;
 
-Each trial produces one of two possible results:
+Each flip produces one of two possible results:
 
 Value| Outcome
 "0"| Tails
 "1"| Heads
 
-For multiple trials, the application counts both outcomes and calculates their percentages.
+Statistics
 
-Statistical Deviation
+For multiple flips, CoinFlip calculates the percentage of each outcome.
 
-The absolute deviation from the expected heads percentage is calculated as:
+The deviation is the absolute difference between the observed heads percentage and the expected "50%".
 
-Deviation = |Observed Heads Percentage - 50|
+Deviation = |Heads Percentage - 50|
 
-A deviation closer to zero indicates that the observed heads percentage is closer to the expected 50% for a fair coin. Small samples can naturally produce larger deviations.
+Actual results may vary between runs. A small deviation is not guaranteed, particularly for small sample sizes.
 
 Project Structure
 
@@ -137,34 +109,25 @@ coinflip/
 ├── coinflip.js
 └── README.md
 
-The application intentionally keeps its implementation in a single JavaScript file.
-
 Limitations
 
-- Results are pseudorandom and are not intended for cryptographic use.
-- Statistical results may vary between executions.
-- A percentage close to 50% is not guaranteed, especially with a small number of flips.
-- ANSI colors depend on terminal compatibility.
+- Results are pseudorandom and are not suitable for cryptographic purposes.
+- Statistical results vary between executions.
+- ANSI colors require a compatible terminal.
 
 Contributing
 
-Contributions, suggestions, and improvements are welcome.
+Contributions are welcome.
 
 1. Fork the repository.
 2. Create a branch for your changes.
-3. Implement your improvement.
-4. Submit a pull request for review.
-
-For substantial changes, consider opening an issue first to discuss the proposed implementation.
+3. Make your changes.
+4. Submit a pull request.
 
 License
 
-This project is distributed under the MIT License. See the "LICENSE" file for details.
+Choose a license for this project and include its text in a "LICENSE" file before claiming a specific license here.
 
 ---
 
-<div align="center">CoinFlip
-
-Heads or tails. Leave it to chance.
-
-</div>
+CoinFlip — Heads or tails. Leave it to chance.
