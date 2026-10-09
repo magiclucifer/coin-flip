@@ -6,7 +6,8 @@ CoinFlip is a command-line tool that simulates coin flips using `0` and `1`. It 
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-yellow?style=flat-square&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?style=flat-square&logo=node.js&logoColor=white)
-![Dependencies](https://img.shields.io/badge/Dependencies-None-blue?style=flat-square)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+![Dependencies](https://img.shields.io/badge/Dependencies-None-brightgreen?style=flat-square)
 
 ## Features
 
@@ -99,7 +100,8 @@ Results vary between executions. A small deviation is not guaranteed, especially
 
     coinflip/
     ├── coinflip.js
-    └── README.md
+    ├── README.md
+    └── LICENSE
 
 ## Limitations
 
@@ -118,8 +120,8 @@ Contributions are welcome.
 
 ## License
 
-Add a `LICENSE` file to specify the terms under which this project can be used and distributed.
+CoinFlip is licensed under the [MIT License](LICENSE).
 
 ---
 
-**CoinFlip — Heads or tails. Leave it to chance.**
+**CoinFlip — Heads or tails. Leave it to chance.** 
